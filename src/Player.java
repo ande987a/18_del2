@@ -6,11 +6,13 @@ public class Player {
     private Scanner Scanner = new Scanner(System.in);
     private String kast="";
 
-    private void turn(){
+    public void turn(String arg){
+        System.out.println();
+        System.out.println("Spiller nr."+arg +" kaster");
         do {
             System.out.println("Tast 2 for at kaste terningen: ");
             kast = Scanner.nextLine();
-        } while (forkert());
+        } while (wrongin());
         setfield(Dice.getcup());
         System.out.println("Spilleren landte på felt nr. " + getfield() + ".");
     }
@@ -19,28 +21,26 @@ public class Player {
         this.field = field;
     }
     public int getfield(){
-        return field;
+        return this.field;
     }
-    public void getturn() {
-    turn();
-    }
-    public boolean forkert(){
-        boolean forkert;
+
+    public boolean wrongin(){
+        boolean wrong;
         if (!kast.equals("2")) {  //tjekker for korrekt input
             System.out.println("Forkert input...");
-           forkert =true;
+            wrong =true;
         } else {
-            forkert = false;
+            wrong = false;
         }
-        return forkert;
+        return wrong;
     }
 
-
-    public static boolean Win() {
-        boolean w=false;
-        //if(Player money>3000){
-        // w=true}
-        return w; //TODO 'Player money>3000' substituere det statement, der skal fortælle os, om én spiller har vundet.
+    //TODO har rykket extra herind for at teste/lave den færdig, hvilket jeg ikke kunne i den anden klasse, eftersom den ikke opdaterede
+    public void extra(String arg){
+        while(getfield()==10) {
+            turn(arg);
+        }
+        System.out.println(getfield()); //denne linje er kun til test, vi skriver det, med den ekstra tur, på samme tid som flavor-teksten til hvert felt.
     }
 
 
