@@ -9,13 +9,13 @@ public class Game {
 
         while(!Rules.Win()){
             Player1.turn("1");
-            ex.extra("1");
+            Player1.extra("1");
             //TODO Her skal muligvis være en get til den opdaterede kapital
 
         if(!Rules.Win()){
             //TODO Her skal muligvis være en get til den opdaterede kapital-
             Player2.turn("2");
-            ex.extra("2");
+            Player2.extra("2");
         }
         }
         Game.Won();

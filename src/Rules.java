@@ -1,12 +1,9 @@
 public class Rules {
 
     private Player p = new Player();
-    //TODO virker endnu ikke inde i Game.java
-    public void extra(String arg){
-        while(p.getfield()==10) {
-            p.turn(arg);
-        }
-    }
+    //TODO hmm
+
+
 
 
 
