@@ -2,36 +2,37 @@ import java.util.Scanner;
 
 public class Player {
 
-    private static void turn(){
-        int field;
-        boolean f;
-        Scanner Scanner = new Scanner(System.in);
+    private int field;
+    private Scanner Scanner = new Scanner(System.in);
+    private String kast="";
 
+    private void turn(){
         do {
             System.out.println("Tast 2 for at kaste terningen: ");
-            String kast = Scanner.nextLine();
-            if (kast.equals("2")) {  //tjekker for korrekt input
-                f=false;
-                field=Dice.getcup();
-                System.out.println("Spilleren landte på felt nr. " + field + ".");
-                setfield(field);
-            } else {
-                System.out.println("Forkert input...");
-                f=forkert();
-            }
-        } while (f);
+            kast = Scanner.nextLine();
+        } while (forkert());
+        setfield(Dice.getcup());
+        System.out.println("Spilleren landte på felt nr. " + getfield() + ".");
     }
 
-    public static int setfield(int field) {
+    public void setfield(int field) {
+        this.field = field;
+    }
+    public int getfield(){
         return field;
     }
-
-    public static void getturn() {
+    public void getturn() {
     turn();
     }
-
-    public static boolean forkert(){ //TODO er det her for meget? altså, vi opdatere jo stadig vores f inde i Player.turn, så denne er vel overflødig???
-        return true;
+    public boolean forkert(){
+        boolean forkert;
+        if (!kast.equals("2")) {  //tjekker for korrekt input
+            System.out.println("Forkert input...");
+           forkert =true;
+        } else {
+            forkert = false;
+        }
+        return forkert;
     }
 
 
