@@ -1,6 +1,6 @@
 public class Bank {
 
-    private int balance1;
+    private int balance1=1000;
     public int getBalance1(){
         return this.balance1;
     }
@@ -8,7 +8,7 @@ public class Bank {
         this.balance1 = balance1;
     }
 
-    private int balance2;
+    private int balance2=1000;
     public int getBalance2(){
         return this.balance2;
     }

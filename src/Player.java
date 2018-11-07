@@ -40,7 +40,7 @@ public class Player {
         while(getfield()==10) {
             turn(arg);
         }
-        System.out.println(getfield()); //denne linje er kun til test, vi skriver det, med den ekstra tur, på samme tid som flavor-teksten til hvert felt.
+        // (◉͜ʖ ◉) System.out.println(getfield()); //denne linje er kun til test, vi skriver det, med den ekstra tur, på samme tid som flavor-teksten til hvert felt.
     }
 
 
