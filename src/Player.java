@@ -2,32 +2,32 @@ import java.util.Scanner;
 
 public class Player {
 
-    public static void turn(){
-        int t = 0,felt=0;
-        boolean f=false;
+    private static void turn(){
+        int field;
+        boolean f;
         Scanner Scanner = new Scanner(System.in);
 
         do {
             System.out.println("Tast 2 for at kaste terningen: ");
-            t=Dice.cup();
             String kast = Scanner.nextLine();
             if (kast.equals("2")) {  //tjekker for korrekt input
                 f=false;
-                System.out.println("Spilleren slog: " + t);
-                System.out.println();
-                felt += t;
-                if(felt>12){
-                    felt+=-12;
-                }
-                System.out.println("Spiller landte på felt nr. " + felt + ".");
-                //TODO Her skal muligvis være en set felt, så vi kan udregne den opdaterede kapital
-
+                field=Dice.getcup();
+                System.out.println("Spilleren landte på felt nr. " + field + ".");
+                setfield(field);
             } else {
                 System.out.println("Forkert input...");
                 f=forkert();
             }
-        } while (f); //tjekker for 2 ens
-        //Scanner.close();  TODO ret sikker på, at denne skal være der, et sted, men den crasher koden, fordi hoveddokumentet ikke importere java.util.scanner... hvilket det heller ikke burde behøve.
+        } while (f);
+    }
+
+    public static int setfield(int field) {
+        return field;
+    }
+
+    public static void getturn() {
+    turn();
     }
 
     public static boolean forkert(){ //TODO er det her for meget? altså, vi opdatere jo stadig vores f inde i Player.turn, så denne er vel overflødig???
@@ -42,7 +42,7 @@ public class Player {
         return w; //TODO 'Player money>3000' substituere det statement, der skal fortælle os, om én spiller har vundet.
     }
 
-    //TODO? her skal muligvis laves en metode, der udføre vores if 'felt>12'.
+
 
 
 }
