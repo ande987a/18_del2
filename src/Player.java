@@ -6,7 +6,9 @@ public class Player {
     private Scanner Scanner = new Scanner(System.in);
     private String kast="";
 
-    private void turn(){
+    public void turn(String arg){
+        System.out.println();
+        System.out.println("Spiller nr."+arg +" kaster");
         do {
             System.out.println("Tast 2 for at kaste terningen: ");
             kast = Scanner.nextLine();
@@ -21,9 +23,7 @@ public class Player {
     public int getfield(){
         return field;
     }
-    public void getturn() {
-    turn();
-    }
+
     public boolean forkert(){
         boolean forkert;
         if (!kast.equals("2")) {  //tjekker for korrekt input
@@ -36,12 +36,7 @@ public class Player {
     }
 
 
-    public static boolean Win() {
-        boolean w=false;
-        //if(Player money>3000){
-        // w=true}
-        return w; //TODO 'Player money>3000' substituere det statement, der skal fortælle os, om én spiller har vundet.
-    }
+
 
 
 

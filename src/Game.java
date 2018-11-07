@@ -5,26 +5,25 @@ public class Game {
 
         Player Player1 = new Player();
         Player Player2 = new Player();
+        Rules ex = new Rules();
 
-        while(!Player.Win()){
-            System.out.println();
-            System.out.println("Spiller nr.1 kaster");
-            Player1.getturn();
+        while(!Rules.Win()){
+            Player1.turn("1");
+            ex.extra("1");
             //TODO Her skal muligvis være en get til den opdaterede kapital
 
-        if(!Player.Win()){
-            System.out.println();
-            System.out.println("Spiller nr.2 kaster");
+        if(!Rules.Win()){
             //TODO Her skal muligvis være en get til den opdaterede kapital-
-            Player2.getturn();
+            Player2.turn("2");
+            ex.extra("2");
         }
         }
         Game.Won();
     }
 
-    //TODO skal flyttes et mere relavant sted hen
+    //TODO skal flyttes et mere relavant sted hen, og fikses så spiller 2 kan vinde
     public static void Won(){
-        if(Player.Win()) {
+        if(Rules.Win()) {
             System.out.println();
             System.out.println("Spiller nr.1 vandt");
         } else {
