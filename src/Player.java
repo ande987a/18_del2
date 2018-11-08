@@ -4,7 +4,9 @@ public class Player {
 
     private int field;
     private Scanner Scanner = new Scanner(System.in);
+    private Bank b = new Bank();
     private String kast="";
+    private boolean a=true; //TODO find en bedre måde at stoppe dobbeltudpring ved ekstratur på.
 
     private void turn(String arg){
         System.out.println();
@@ -15,6 +17,10 @@ public class Player {
         } while (wrongin());
         setfield(Dice.getcup());
         System.out.println("Spilleren landte på felt nr. " + getfield() + ".");
+
+        fieldtype(arg);
+        if(a)System.out.println(b.getBalance());
+
     }
 
     public void setfield(int field) {
@@ -36,7 +42,6 @@ public class Player {
         return wrong;
     }
 
-    private Bank b = new Bank();
 private void fieldtype(String arg){
     switch (getfield()-1) {
         case 1: b.setBalance(b.getBalance()+250);
@@ -65,7 +70,10 @@ private void fieldtype(String arg){
             break;
         case 9: b.setBalance(b.getBalance()-80);
             System.out.println("Du støder ind i en mur af varulve, heldigvis finder du en butik som sælger kødben. -80 guld! +ekstra tur");
+            System.out.println(b.getBalance());
+            a=false;
             turn(arg);
+            a=true;
             break;
         case 10: b.setBalance(b.getBalance()-50);
             System.out.println("Du går en tur og tilfældigvis falder du ned i et hul i vejen");
@@ -73,13 +81,8 @@ private void fieldtype(String arg){
         case 11: b.setBalance(b.getBalance()+650);
             System.out.println("Du finder en gammel guldmine i bjergene og beslutter de for at tage noget af guldet med hjem. +650 guld!");
             break;}
-    //TODO sout'en nedenunder er bare for testning
-    System.out.println(b.getBalance());
 }
 
-public void getfieldtype(String arg){ //TODO Behøves denne... må den tilhørende funktion være public?
-    fieldtype(arg);
-}
 
 
 }

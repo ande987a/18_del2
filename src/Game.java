@@ -6,11 +6,9 @@ public class Game {
 
         while(!Win()){
             Player1.getturn("1");
-            Player1.getfieldtype("1");
 
             if(!Win()){
                 Player2.getturn("2");
-                Player2.getfieldtype("2");
             }
         }
         Game.Won();
