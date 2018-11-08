@@ -6,7 +6,8 @@ public class Player {
     private Scanner Scanner = new Scanner(System.in);
     private Bank b = new Bank();
     private String kast = "";
-    private boolean a = true; //TODO find en bedre måde at stoppe dobbeltudpring ved ekstratur på.
+    private boolean a = true; //TODO find en bedre måde at stoppe dobbeltudprint ved ekstratur på.
+    boolean win = false;
 
     private void turn(String arg) {
         System.out.println();
@@ -19,8 +20,7 @@ public class Player {
         System.out.println("Spilleren landte på felt nr. " + getfield() + ".");
 
         fieldtype(arg);
-        if (a) System.out.println(b.getBalance());
-
+        Win(arg);
     }
 
     public void setfield(int field) {
@@ -97,7 +97,20 @@ public class Player {
                 System.out.println("Du finder en gammel guldmine i bjergene og beslutter de for at tage noget af guldet med hjem. +650 guld!");
                 break;
         }
+        if (a) System.out.println(b.getBalance());
     }
 
+    private boolean Win(String arg) {
+        if (b.getBalance() >= 3000) {
+            System.out.println("Spiller "+arg+" har vundet !!!");
+            win = true;
+        }
+
+        return win;
+    }
+
+    public boolean getwin(){
+        return win;
+    }
 
 }
