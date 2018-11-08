@@ -7,7 +7,6 @@ public class Game {
         while (!Player1.getwin() && !Player2.getwin()) {
             Player1.getturn("1");
 
-
             if (!Player1.getwin() && !Player2.getwin()) {
                 Player2.getturn("2");
             }

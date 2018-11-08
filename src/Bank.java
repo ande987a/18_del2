@@ -7,10 +7,10 @@ public class Bank {
     }
 
     public void setBalance(int balance) {
-        if(balance<0){
-            this.balance=0;
-        }else
-        this.balance = balance;
+        if (balance < 0) {
+            this.balance = 0;
+        } else
+            this.balance = balance;
     }
 
 }

@@ -66,7 +66,7 @@ public class Player {
                 break;
             case 5:
                 b.setBalance(b.getBalance() + 180);
-                System.out.println("Du stjæler fra en tilfældig pusher. +180 guld!");
+                System.out.println("Du tager forbi 'Kowloon Walled City' og stjæler fra en tilfældig pusher. +180 guld!");
                 break;
             case 6:
                 b.setBalance(b.getBalance() + 0);
@@ -102,14 +102,14 @@ public class Player {
 
     private boolean Win(String arg) {
         if (b.getBalance() >= 3000) {
-            System.out.println("Spiller "+arg+" har vundet !!!");
+            System.out.println("Spiller " + arg + " har vundet !!!");
             win = true;
         }
 
         return win;
     }
 
-    public boolean getwin(){
+    public boolean getwin() {
         return win;
     }
 
