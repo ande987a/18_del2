@@ -6,7 +6,7 @@ public class Player {
     private Scanner Scanner = new Scanner(System.in);
     private Bank b = new Bank();
     private String kast = "";
-    private boolean a = true; //TODO find en bedre måde at stoppe dobbeltudprint ved ekstratur på.
+    private boolean a = true;
     boolean win = false;
 
     private void turn(String arg) {
@@ -62,7 +62,7 @@ public class Player {
                 break;
             case 4:
                 b.setBalance(b.getBalance() - 20);
-                System.out.println("Du er ude i ørkenen og da det bliver nat, opdager du at du har glemt dit tæppe. -20 guld!");
+                System.out.println("Du er ude i ørkenen og da det bliver nat, opdager du at du har glemt et tæppe. -20 guld!");
                 break;
             case 5:
                 b.setBalance(b.getBalance() + 180);
@@ -70,7 +70,7 @@ public class Player {
                 break;
             case 6:
                 b.setBalance(b.getBalance() + 0);
-                System.out.println("Du tager forbi et kloster og opdager et det ikke var anderledes end forventet. +0 guld!");
+                System.out.println("Du tager forbi et kloster og opdager et det ikke er anderledes end forventet. +0 guld!");
                 break;
             case 7:
                 b.setBalance(b.getBalance() - 70);
@@ -90,11 +90,11 @@ public class Player {
                 break;
             case 10:
                 b.setBalance(b.getBalance() - 50);
-                System.out.println("Du går en tur og tilfældigvis falder du ned i et hul i vejen");
+                System.out.println("Du går en tur og tilfældigvis falder du ned i et hul i vejen. -50 guld!");
                 break;
             case 11:
                 b.setBalance(b.getBalance() + 650);
-                System.out.println("Du finder en gammel guldmine i bjergene og beslutter de for at tage noget af guldet med hjem. +650 guld!");
+                System.out.println("Du finder en gammel guldmine i bjergene og beslutter dig for at tage noget af guldet med hjem. +650 guld!");
                 break;
         }
         if (a) System.out.println(b.getBalance());
