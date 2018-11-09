@@ -9,7 +9,7 @@ public class PlayerTest {
         // Tester om vi kan lande på et felt der ikke befinder sig i intervallet for 1-12.
         for (int i = 0; i < 1100; i++) {
             int tal = DiceCup.getcup();
-            assertTrue(tal > 0 && tal < 13);
+            assertTrue(tal > 1 && tal < 13);
         }
         // Tester hvor mange gange man lander på hvert enkelt felt.
         int f2 = 0, f3 = 0, f4 = 0, f5 = 0, f6 = 0, f7 = 0, f8 = 0, f9 = 0, f10 = 0, f11 = 0, f12 = 0;
