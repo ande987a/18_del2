@@ -97,7 +97,7 @@ public class Player {
                 System.out.println("Du finder en gammel guldmine i bjergene og beslutter dig for at tage noget af guldet med hjem. +650 guld!");
                 break;
         }
-        if (a) System.out.println(b.getBalance());
+        if (a) System.out.println("Din totale guldbeholdning er nu "+b.getBalance()+"!");
     }
 
     private boolean Win(String arg) {
