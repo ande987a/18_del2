@@ -62,7 +62,7 @@ public class Player {
                 break;
             case 4:
                 b.setBalance(b.getBalance() - 20);
-                System.out.println("Du er ude i ørkenen og da det bliver nat, opdager du at du har glemt et tæppe. -20 guld!");
+                System.out.println("Du er ude i ørkenen og da det bliver nat, opdager du at du har glemt det tæppe. -20 guld!");
                 break;
             case 5:
                 b.setBalance(b.getBalance() + 180);
